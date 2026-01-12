@@ -179,3 +179,24 @@ cat response.json
 
 **Expected Output:** "Hello! This is a Serverless response."
 
+## **Lesson 4:** Event-Driven Architecture
+
+**Goal:** Upload a file to S3, which instantly triggers a Lambda function to print the filename.
+
+```bash
+cd ~/aws-lessons/lesson4
+```
+
+**. Run the Test** Ensure your virtual environment is active (source ../venv/bin/activate) and run:
+
+```bash
+python3 upload_trigger.py
+```
+
+**7. Validation** Check the logs of the Lambda function to see if it woke up and processed the file:
+
+```bash
+aws lambda logs tail file-processor
+```
+
+You should see: *AUTOMATION ALERT: File 'receipt.txt' was uploaded...*
