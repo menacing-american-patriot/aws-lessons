@@ -28,7 +28,7 @@ provider "aws" {
   s3_use_path_style           = true
 
   endpoints {
-    s3 = "http://localhost:4566"
+    s3 = "http://192.168.67.2:31566"
   }
 }
 
@@ -70,5 +70,5 @@ resource "aws_s3_object" "upload_html" {
 # ---------------------------------------------------------
 output "website_url" {
   description = "Click this URL to view your local website"
-  value       = "http://localhost:4566/my-local-site/index.html"
+  value       = "http://192.168.67.2:31566/my-local-site/index.html"
 }

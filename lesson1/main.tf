@@ -22,11 +22,11 @@ provider "aws" {
 
   # Redirect requests to local IP to avoid IPv6/DNS timeouts
   endpoints {
-    s3       = "http://127.0.0.1:4566"
-    dynamodb = "http://127.0.0.1:4566"
-    lambda   = "http://127.0.0.1:4566"
-    iam      = "http://127.0.0.1:4566"
-    sts      = "http://127.0.0.1:4566" # <--- This fixes the 5-minute hang
+    s3       = "http://192.168.67.2:31566"
+    dynamodb = "http://192.168.67.2:31566"
+    lambda   = "http://192.168.67.2:31566"
+    iam      = "http://192.168.67.2:31566"
+    sts      = "http://192.168.67.2:31566" # <--- This fixes the 5-minute hang
   }
 }
 
