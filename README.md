@@ -98,7 +98,7 @@ terraform plan
 terraform apply
 ```
 
-* 3. Voila
+* **Voila**
 
 Now, verify the resources exist using your manual CLI alias.
 
@@ -119,7 +119,8 @@ We are done with the project. How do we clean up so we don't get 'billed'?
 **Instead of clicking delete on every item, run:**
 
 ```bash
-terraform destroy```
+terraform destroy
+```
 
 **Teaching Point:** This cleans up everything defined in the code automatically. It ensures no stray resources are left behind costing money.
 
