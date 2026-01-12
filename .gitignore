@@ -2,7 +2,8 @@
 
 # --- Terraform (CRITICAL) ---
 # The .terraform folder contains the heavy plugin binaries
-.terraform/
+*/.terraform/
+*.lock.hcl
 
 # State files contain the "truth" of your current deployment. 
 # Never commit these, or you and your brother will get conflict errors.
