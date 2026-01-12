@@ -1,0 +1,11 @@
+
+extraVolumes:
+  - name: docker-sock
+    hostPath:
+      path: /var/run/docker.sock
+extraVolumeMounts:
+  - name: docker-sock
+    mountPath: /var/run/docker.sock
+extraEnvVars:
+  - name: LAMBDA_EXECUTOR
+    value: ''

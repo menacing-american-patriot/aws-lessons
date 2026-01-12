@@ -50,3 +50,7 @@ response.json
 # IDE settings (optional, but keeps repo clean)
 .vscode/
 .idea/
+main.py
+.python-version
+pyproject.toml
+uv.lock
