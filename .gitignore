@@ -1,0 +1,51 @@
+.env
+
+# --- Terraform (CRITICAL) ---
+# The .terraform folder contains the heavy plugin binaries
+.terraform/
+
+# State files contain the "truth" of your current deployment. 
+# Never commit these, or you and your brother will get conflict errors.
+*.tfstate
+*.tfstate.backup
+
+# Crash logs
+crash.log
+crash.log.*
+
+# Exclude sensitive variables (if you ever add them)
+*.tfvars
+*.tfvars.json
+
+# --- Python (Lesson 3) ---
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments (if you use them later)
+venv/
+.venv/
+env/
+
+# --- Lesson Artifacts (Generated Files) ---
+# Ignore the zip file Terraform creates in Lesson 3
+*.zip
+
+# Ignore the output file from your "Test" commands
+response.json
+
+# Ignore the credentials file
+.env
+
+# --- OS & Editor ---
+# Vim swap files (Since you are using vi)
+*.swp
+*.swo
+
+# Mac junk (if you or he uses a Mac)
+.DS_Store
+
+# IDE settings (optional, but keeps repo clean)
+.vscode/
+.idea/
