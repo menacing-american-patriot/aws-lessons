@@ -205,3 +205,98 @@ aws lambda logs tail file-processor
 ```
 
 You should see: *AUTOMATION ALERT: File 'receipt.txt' was uploaded...*
+
+## **Lesson 5:** API Gateway + Lambda
+
+**Goal:** Create a serverless REST API that is publicly accessible.
+
+```bash
+cd ~/aws-lessons/lesson5
+```
+
+**Deploy**
+
+```bash
+terraform init
+terraform apply
+```
+
+After you apply, Terraform will output a URL. This is your live API endpoint.
+
+**Test the API**
+
+You can use `curl` to test your new API. Replace `YOUR_API_ENDPOINT_URL` with the output from the `terraform apply` command.
+
+```bash
+curl YOUR_API_ENDPOINT_URL/hello
+```
+
+**Expected Output:**
+
+You should see a JSON response from your Lambda function:
+
+```json
+{
+  "message": "Hello from your API-powered Lambda!",
+  "input": {
+    ...
+  }
+}
+```
+
+## **Lesson 6:** Storing and Retrieving Data (Lambda + DynamoDB)
+
+**Goal:** Create an API that can save data to a database and retrieve it.
+
+**Prep the Workspace**
+
+```bash
+cd ~/aws-lessons/lesson6
+```
+
+**Deploy**
+
+```bash
+terraform init
+terraform apply
+```
+
+Terraform will output an `api_endpoint` URL. Copy this for the next step.
+
+**Test the API**
+
+1.  **Create a note:**
+    Use `curl` to send a `POST` request with some JSON data. Replace `YOUR_API_ENDPOINT` with the URL from the previous step.
+
+    ```bash
+    curl -X POST \
+      'YOUR_API_ENDPOINT/notes' \
+      -H 'Content-Type: application/json' \
+      -d '{"content": "Hello, this is my first note!"}'
+    ```
+
+    The API will respond with a unique `noteId`. Copy this ID.
+
+    ```json
+    {
+      "noteId": "a1b2c3d4-..."
+    }
+    ```
+
+2.  **Retrieve the note:**
+    Now, use `curl` with a `GET` request to fetch the data you just saved. Replace `YOUR_API_ENDPOINT` and `YOUR_NOTE_ID` with your actual values.
+
+    ```bash
+    curl 'YOUR_API_ENDPOINT/notes/YOUR_NOTE_ID'
+    ```
+
+    **Expected Output:**
+
+    You should see the original content of your note.
+
+    ```json
+    {
+      "noteId": "a1b2c3d4-...",
+      "content": "Hello, this is my first note!"
+    }
+    ```
