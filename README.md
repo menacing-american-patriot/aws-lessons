@@ -22,6 +22,10 @@ source .env
 kubectl port-forward svc/local-aws-localstack 4566:4566
 ```
 
+```bash
+alias aws="aws --endpoint-url=http://192.168.67.2:31566"
+```
+
 Then we test to make sure the shell read the environment variables. This next command should have no output.
 
 ```bash

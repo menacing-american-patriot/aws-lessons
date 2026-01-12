@@ -54,3 +54,4 @@ main.py
 .python-version
 pyproject.toml
 uv.lock
+lesson4/receipt.txt

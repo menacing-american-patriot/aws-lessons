@@ -1,7 +1,7 @@
 import boto3
 
 # Connect to LocalStack
-s3 = boto3.client('s3', endpoint_url='http://127.0.0.1:4566')
+s3 = boto3.client('s3', endpoint_url='http://192.168.67.2:31566')
 
 # Create a dummy file
 with open("receipt.txt", "w") as f:
